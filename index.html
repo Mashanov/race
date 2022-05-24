@@ -310,6 +310,8 @@ function startGame() {
     renderer.setAnimationLoop(animation);
   }
 }
+    
+    setTimeout(startGame, 5000);
 
 function positionScoreElement() {
   const arcCenterXinPixels = (arcCenterX / cameraWidth) * window.innerWidth;
