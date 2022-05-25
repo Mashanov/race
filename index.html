@@ -935,7 +935,26 @@ function Tree() {
   return tree;
 }
 
-accelerateButton.addEventListener("mouseover", function () {
+ $("#accelerate").bind('touchstart', function(){
+   
+        startGame();
+        accelerate = true;
+   
+  }).bind('touchend', function(){
+   
+      accelerate = false;
+  });
+    
+ $("#decelerate").bind('touchstart', function(){
+
+  startGame();
+  decelerate = true;
+
+}).bind('touchend', function(){
+
+  decelerate = false;
+});
+/* accelerateButton.addEventListener("mouseover", function () {
   startGame();
   accelerate = true;
 });
@@ -948,7 +967,7 @@ accelerateButton.addEventListener("mouseout", function () {
 });
 decelerateButton.addEventListener("mouseout", function () {
   decelerate = false;
-});
+}); */
 window.addEventListener("keydown", function (event) {
   if (event.key == "ArrowUp") {
     startGame();
