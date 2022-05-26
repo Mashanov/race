@@ -193,10 +193,23 @@ var music = new Audio ('https://raw.githubusercontent.com/Mashanov/race/main/rac
 music.loop = true;
 music.volume = 0.5;
 
-vkBridge.send("VKWebAppGetUserInfo").then(function (data){
+vkBridge.send("VKWebAppGetUserInfo").then(function (dataUser){
 
-  $('#user').html(data.first_name + ' ' + data.last_name + '<br>Ваш рекорд: 0');
-})
+  vkBridge.send('VKWebAppStorageGet', {keys: ['game']}).then(function (data)
+  {
+      if (data.keys[0].value != '' && data.keys[0].value != null)
+      {
+
+        var scoreGameCar = data.keys[0].value;
+        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <div id="UserScore">' + data.keys[0].value + '</div>');
+
+      } else {
+
+        var scoreGameCar = 0;
+        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <div id="UserScore">0</div>');
+      }
+  })
+});
 
 window.onfocus = function (){music.play ()}
 window.onblur = function(){music.pause ()}
