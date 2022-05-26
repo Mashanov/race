@@ -201,12 +201,12 @@ vkBridge.send("VKWebAppGetUserInfo").then(function (dataUser){
       {
 
         var scoreGameCar = data.keys[0].value;
-        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <div id="UserScore">' + data.keys[0].value + '</div>');
+        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <span id="UserScore">' + data.keys[0].value + '</span>');
 
       } else {
 
         var scoreGameCar = 0;
-        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <div id="UserScore">0</div>');
+        $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <span id="UserScore">0</span>');
       }
   })
 });
