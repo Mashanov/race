@@ -177,6 +177,7 @@ a:visited {
     </div>
   </a>
 </div>
+<div id="user"></div>
 
 <!-- partial -->
 <script src='https://itchief.ru/assets/js/jquery-3.6.0.min.js'></script>
@@ -189,6 +190,11 @@ vkBridge.send("VKWebAppInit");
 var music = new Audio ('https://raw.githubusercontent.com/Mashanov/race/main/race.mp3');
 music.loop = true;
 music.volume = 0.5;
+
+vkBridge.send("VKWebAppGetUserInfo").then(function (data){
+
+  $('#user').html(data.first_name + ' ' + data.last_name + '<br>Ваш рекорд: 0');
+})
 
 window.onfocus = function (){music.play ()}
 window.onblur = function(){music.pause ()}
