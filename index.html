@@ -156,14 +156,14 @@ window.onblur = function(){music.pause ()}
 function aud ()
 {
 
-    if (d.querySelector('#musicStop').getAttribute('style') == null)
+    if (document.querySelector('#musicStop').getAttribute('style') == null)
     {
-        d.querySelector('#musicStop').style.display = 'block';
+        document.querySelector('#musicStop').style.display = 'block';
         music.volume = 0;
 
     } else {
         
-        d.querySelector('#musicStop').removeAttribute('style');
+        document.querySelector('#musicStop').removeAttribute('style');
         music.volume = 0.5;
     }
 }
