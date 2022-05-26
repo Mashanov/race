@@ -146,6 +146,13 @@ a:visited {
   <script>
 window.focus(); // Capture keys right away (by default focus is on editor)
 
+var music = new Audio ('https://raw.githubusercontent.com/Mashanov/race/main/race.mp3');
+music.loop = true;
+music.volume = 0.5;
+
+window.onfocus = function (){music.play ()}
+window.onblur = function(){music.pause ()}
+
 // Pick a random value from an array
 function pickRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
