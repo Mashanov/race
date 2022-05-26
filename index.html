@@ -153,6 +153,21 @@ music.volume = 0.5;
 window.onfocus = function (){music.play ()}
 window.onblur = function(){music.pause ()}
 
+function aud ()
+{
+
+    if (d.querySelector('#musicStop').getAttribute('style') == null)
+    {
+        d.querySelector('#musicStop').style.display = 'block';
+        music.volume = 0;
+
+    } else {
+        
+        d.querySelector('#musicStop').removeAttribute('style');
+        music.volume = 0.5;
+    }
+}
+
 // Pick a random value from an array
 function pickRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
