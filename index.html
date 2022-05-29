@@ -1320,6 +1320,12 @@ function hitDetection() {
   if (hit) {
     if (resultsElement) resultsElement.style.display = "flex";
     renderer.setAnimationLoop(null); // Stop animation loop
+    if (score > scoreGameCar)
+    {
+      vkBridge.send('VKWebAppStorageSet', {key: 'game', value: score});
+      scoreGameCar = score;
+      document.querySelector('#UserScore').innerHTML = score;
+    }
   }
 }
 
