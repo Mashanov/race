@@ -208,7 +208,7 @@ vkBridge.send("VKWebAppGetUserInfo").then(function (dataUser){
       } else {
  
         $('#controls').css({zIndex: 2,pointerEvents: 'none'})
-        $('body').append(`<div onclick="document.querySelector('#controls').removeAttribute('style');this.remove()" style="width: 100%;height: 100%;position: fixed;background: #000000bd;z-index: 1;top: 0;"><div style="top: 50%;bottom: 50%;position: relative;font-family: "Press Start 2P", cursive;max-width: 70%;left: 0;right: 0;margin: 0 auto;text-align: center;line-height: 30px;">Привет ` + dataUser.first_name + `, твоя задача не врезаться в другие автомобили, слева внизу показаны кнопки управления. Удачи в гонке !!!</div></div>`);
+        $('body').append(`<div onclick="document.querySelector('#controls').removeAttribute('style');this.remove()" style="width: 100%;height: 100%;position: fixed;background: #000000bd;z-index: 1;top: 0;"><div style="top: 50%;bottom: 50%;position: relative;font-family: 'Press Start 2P', cursive;max-width: 70%;left: 0;right: 0;margin: 0 auto;text-align: center;line-height: 30px;">Привет ` + dataUser.first_name + `, твоя задача не врезаться в другие автомобили, слева внизу показаны кнопки управления. Удачи в гонке !!!</div></div>`);
         scoreGameCar = 0;
         $('#user').html(dataUser.first_name + ' ' + dataUser.last_name + '<br>Ваш рекорд: <span id="UserScore">0</span>');
       }
