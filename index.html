@@ -1322,7 +1322,7 @@ function hitDetection() {
     renderer.setAnimationLoop(null); // Stop animation loop
     if (score > scoreGameCar)
     {
-      vkBridge.send('VKWebAppStorageSet', {key: 'game', value: score});
+      vkBridge.send('VKWebAppStorageSet', {key: 'game', value: String(score)});
       scoreGameCar = score;
       document.querySelector('#UserScore').innerHTML = score;
     }
