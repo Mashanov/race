@@ -1322,6 +1322,7 @@ function hitDetection() {
   if (hit) {
     if (resultsElement) resultsElement.style.display = "flex";
     renderer.setAnimationLoop(null); // Stop animation loop
+    vkBridge.send('VKWebAppShowNativeAds', {ad_format:'interstitial'});
     if (score > scoreGameCar)
     {
       vkBridge.send('VKWebAppStorageSet', {key: 'game', value: String(score)});
